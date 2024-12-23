@@ -1,0 +1,15 @@
+{
+  "name": "sc4pac-auth",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^32.2.7"
+  },
+  "dependencies": {
+    "set-cookie-parser": "^2.7.1"
+  }
+}
