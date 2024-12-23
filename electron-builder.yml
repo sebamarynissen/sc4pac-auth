@@ -8,3 +8,6 @@ win:
 linux:
   target:
     - zip
+
+directories:
+  output: dist/${platform}
