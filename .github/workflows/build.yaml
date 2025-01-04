@@ -9,8 +9,17 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+        os:
+          # - id: ubuntu-latest
+          #   path: ./dist/linux/*.zip
+          #   label: linux
+          # - id: windows-latest
+          #   path: ./dist/win32/*.zip
+          #   label: windows
+          - id: macos-latest
+            path: ./dist/darwin/*.dmg
+            label: mac
+    runs-on: ${{ matrix.os.id }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,5 +30,5 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: electron-build
-          path: ./dist/*
+          name: ${{ matrix.os.label }}
+          path: ${{ matrix.os.path }}

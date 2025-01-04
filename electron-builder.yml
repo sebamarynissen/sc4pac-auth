@@ -5,6 +5,10 @@ win:
     - zip
   sign: false
 
+mac:
+  target:
+    - dmg
+
 linux:
   target:
     - zip
