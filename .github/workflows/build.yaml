@@ -20,6 +20,8 @@ jobs:
             path: ./dist/darwin/*.dmg
             label: mac
     runs-on: ${{ matrix.os.id }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
